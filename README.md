@@ -1,12 +1,10 @@
 # Schmancy
 
-This is a fancy-schmancy library for enforcing Semantic Types on your TypeScript codebase. With zero dependencies and aggressive tree shaking support, schmancy allows you to use as much or as little of the library as you'd prefer.
+A fancy-schmancy library for enforcing Semantic Types on your TypeScript codebase. With zero dependencies and aggressive tree shaking support, schmancy allows you to use as much or as little of the library as you'd prefer.
 
 Have you ever come across a parameter like `delay: number` with absolutely no documentation? What units is this delay using? Milliseconds? Seconds? Minutes? Several minutes of code spelunking later you have your answer: this is used in a `setTimeout()` and represents milliseconds.
 
 What if you could just have the answer immediately, enforced with TypeScript's typing system, and easily readable in your editor's tooltip information? Schmancy aims to provide that functionality for your entire codebase.
-
-
 
 # Built-in types
 
@@ -32,11 +30,12 @@ The built-in types utilize `WeakType` or `StrongType` based on whether or not th
 # Creating your own types
 
 You can also create your own types.
-
-`                                     type name  parent type`
-`                                         V           V     `
-`export type MyUniqueId = StrongType<"MyUniqueId", number>; `
-`export type MyProductId = WeakType<"MyProductId", string>; `
+```
+                                     type name  parent type
+                                         V           V     
+export type MyUniqueId = StrongType<"MyUniqueId", number>; 
+export type MyProductId = WeakType<"MyProductId", string>; 
+```
 
 Don't forget to use `strongCast()` or `weakCast()` for assignment, when necessary.
 
@@ -67,14 +66,14 @@ We may add additional namespaces at some point in the future that can allow for 
 
 The following are some general notes on the project's philosophy. Feature requests that are in-scope will be considered, but feature requests that are out-of-scope will be closed.
 
-What is schmancy?
+## What is schmancy?
 
 - Compile-time safety with semantic types
 - Community-defined and user-defined custom types
 - Ultra lightweight and performance, especially for value reads
 - (Future) Type validation for primitives (string, number, bigint)
 
-What ISN'T schmancy?
+## What ISN'T schmancy?
 
 - Schema validation/transformation for primitives or advanced types
 - ORM or database modeller/layer
