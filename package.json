@@ -1,0 +1,60 @@
+{
+	"name": "schmancy",
+	"version": "0.0.1",
+	"description": "A fancy-schmancy library for enforcing Semantic Typing on your TypeScript codebase.",
+	"type": "module",
+	"main": "dist/bundle.js",
+	"module": "dist/bundle.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/bundle.js",
+			"require": "./dist/bundle.cjs"
+		},
+		"./array": {
+			"types": "./dist/types/array.d.ts",
+			"import": "./dist/types/array.js",
+			"require": "./dist/types/array.cjs"
+		},
+		"./boolean": {
+			"types": "./dist/types/boolean.d.ts",
+			"import": "./dist/types/boolean.js",
+			"require": "./dist/types/boolean.cjs"
+		},
+		"./number": {
+			"types": "./dist/types/number.d.ts",
+			"import": "./dist/types/number.js",
+			"require": "./dist/types/number.cjs"
+		},
+		"./string": {
+			"types": "./dist/types/string.d.ts",
+			"import": "./dist/types/string.js",
+			"require": "./dist/types/string.cjs"
+		}
+	},
+	"scripts": {
+		"start": "npm run rollup:start",
+		"build": "npm run rollup:build",
+		"watch": "npm run rollup:watch",
+		"rollup:start": "rollup -c",
+		"rollup:build": "rollup -c",
+		"rollup:watch": "rollup -c --watch",
+		"bun:start": "bun run src/main.ts",
+		"bun:watch": "bun build src/public-api.ts --watch --outdir ./dist",
+		"bun:build": "bun build src/public-api.ts --outdir ./dist",
+		"bun:build:dts": "bun build src/public-api.ts --outdir ./dist --plugins bun-plugin-dts",
+		"bun:test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "GNU LGPL-3.0-only",
+	"devDependencies": {
+		"@types/bun": "^1.2.13",
+		"bun-plugin-dts": "^0.3.0",
+		"esbuild": "^0.25.4",
+		"rollup": "^4.41.0",
+		"rollup-plugin-dts": "^6.2.1",
+		"rollup-plugin-esbuild": "^6.2.1",
+		"typescript": "^5.8.3"
+	}
+}
