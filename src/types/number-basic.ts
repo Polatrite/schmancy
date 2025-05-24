@@ -41,3 +41,10 @@ export type PercentageNumber = WeakType<"PercentageNumber", number>;
  * const percent: DisplayPercentNumber = 75;
  */
 export type DisplayPercentNumber = WeakType<"DisplayPercentNumber", number>; 
+
+/**
+ * A number representing a quantity.
+ * @example
+ * const quantity: QuantityNumber = 10;
+ */
+export type QuantityNumber = WeakType<"QuantityNumber", number>;
